@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <style>
+      /* General body styling */
+      body {
+        background-color: #f0f2f5; /* Light grey background */
+        font-family: Arial, sans-serif;
+      }
+
+      /* Styling for container to add padding and center content */
+      .container {
+        padding: 20px;
+        max-width: 960px; /* Adjust as needed */
+        margin: auto;
+      }
+
+      /* Headlines styling */
+      h2 {
+        color: #343a40; /* Dark grey */
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      /* Button styling */
+      .btn-primary {
+        background-color: #007bff; /* Bootstrap primary blue */
+        border-color: #007bff;
+        border-radius: 20px; /* Rounded edges */
+        padding: 10px 20px; /* Larger padding */
+        font-size: 16px; /* Slightly larger text */
+        transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus {
+        background-color: #0056b3; /* Darker blue on hover/focus */
+        border-color: #0056b3;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Glow effect on focus/hover */
+      }
+
+      /* Additional styling for alert/info boxes */
+      .alert-info {
+        background-color: #d1ecf1;
+        border-color: #bee5eb;
+        color: #0c5460;
+      }
+
+      /* Styling for forms and inputs */
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-control {
+        border-radius: 5px; /* Slightly rounded borders for input fields */
+      }
+
+      /* Override Bootstrap's text-xs-center class to ensure center alignment */
+      .text-xs-center {
+        text-align: center !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-xs-center">MultiCurrency HD-WALLET</h2>
+      <br />
+      <p align="center">
+        <a href="ethereum">
+          <button type="button" class="btn btn-primary">
+            Click here for ETHEREUM page
+          </button>
+        </a>
+        <a href="arbitrum">
+          <button type="button" class="btn btn-primary">
+            Click here for Arbitrum page
+          </button>
+        </a>
+      </p>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <br />
+          <div class="alert alert-info" id="info" role="alert">
+            Create wallet or use your existing wallet by entering your secret 12
+            words.
+          </div>
+          <form>
+            <div class="form-group">
+              <label for="seed">Enter 12-word seed</label>
+              <input type="text" class="form-control" id="seed" />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="generate_seed()"
+            >
+              CREATE NEW WALLET
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="generate_addresses()"
+            >
+              GET BALANCE/PRIVATE-KEY/ADDRESS
+            </button>
+          </form>
+          <hr />
+          <h2 class="text-xs-center">
+            Get info about: Address, Private key and Balances of the seed based
+            on ETHEREUM
+          </h2>
+          <ol id="list"></ol>
+          <hr />
+          <form>
+            <div class="form-group">
+              <label for="address1">From address</label>
+              <input type="text" class="form-control" id="address1" />
+            </div>
+            <div class="form-group">
+              <label for="address2">To address</label>
+              <input type="text" class="form-control" id="address2" />
+            </div>
+            <div class="form-group">
+              <label for="ether">Amount to send:</label>
+              <input type="text" class="form-control" id="ether" />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="send_ether()"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/js/web3.min.js"></script>
+    <script src="/js/hooked-web3-provider.min.js"></script>
+    <script src="/js/lightwallet.min.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
