@@ -12,5 +12,11 @@
             "dest": "index.js"
         }
     ],
+    "mime": {
+        "text/css": [
+          "*.css"
+        ],
+        "javascript": ["*.js"]
+      },
     "public": true
 }
