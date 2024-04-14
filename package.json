@@ -1,7 +1,13 @@
 {
 	"name": "chapter5-building-blockchain-projects",
+	"main": "app.js",
+	"type": "module",
+	"scripts": {
+		"start": "node app.js"
+	},
 	"dependencies": {
 		"express": "^4.17.2",
+		"path": "^0.12.7",
 		"web3": "^0.16.0"
 	}
 }
