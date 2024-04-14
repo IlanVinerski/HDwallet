@@ -1,9 +1,9 @@
 {
 	"name": "chapter5-building-blockchain-projects",
-	"main": "app.js",
+	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"start": "node app.js"
+		"start": "node index.js"
 	},
 	"dependencies": {
 		"express": "^4.17.2",
